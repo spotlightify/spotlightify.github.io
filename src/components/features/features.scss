@@ -1,0 +1,34 @@
+@import 'vars';
+
+.features {
+    display: flex;
+    flex-direction: column;
+
+    .wrap{
+
+        .feature {
+            display: flex;
+            flex-direction: column-reverse;
+            padding-bottom: $s-lg;
+
+
+            .feature-content, .feature-image {
+                width: 100%;
+            }
+
+            @media screen and (min-width: $breakpoint-md) {
+                flex-direction: row;
+
+                .feature-content {
+                    width: 40%;
+                    padding-right: $s-md;
+                }
+
+                .feature-image {
+                    width: 60%!important;
+                    max-width: 38rem;
+                }
+            }
+        }
+    }
+}

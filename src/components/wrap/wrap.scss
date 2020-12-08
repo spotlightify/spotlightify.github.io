@@ -1,0 +1,33 @@
+@import "vars";
+
+.wrap {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: padding 250ms;
+
+    &.vertical {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    @media screen {
+        @media (min-width: $breakpoint-md) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+
+            &.vertical {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        @media (min-width: $breakpoint-lg) {
+            padding-left: 8rem;
+            padding-right: 8rem;
+
+        }
+        @media (min-width: $breakpoint-xl){
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+    }
+}

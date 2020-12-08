@@ -1,0 +1,29 @@
+@import "vars";
+
+.landing {
+    color: $light-grey;
+
+    .landing-background-image {
+        padding: 4rem 0;
+        margin-bottom: 2rem;
+        transition: padding 500ms ease-in-out;
+
+        @media screen {
+            @media (min-width: $breakpoint-md) {
+                padding: 8rem 0;
+            }
+            @media (min-width: $breakpoint-xl) {
+                padding: 12rem 0;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        margin-bottom: unset;
+    }
+}

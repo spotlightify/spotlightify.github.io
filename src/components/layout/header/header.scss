@@ -1,0 +1,84 @@
+@import "vars";
+
+.header {
+    background-color: $dark-grey;
+    color: $light-grey;
+    padding: $s-md 0;
+
+    > .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .brand {
+        display: flex;
+
+        svg {
+            height: 2rem;
+
+            circle {
+                opacity: 1;
+                transition: opacity 500ms ease-in-out;
+            }
+        }
+
+        &:hover {
+            svg {
+                circle {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .menu-item {
+            color: $white;
+            margin-left: $s-md;
+            text-decoration: none;
+            transition: color $transition;
+
+            svg {
+                fill: $white;
+                width: 1.1rem;
+                height: 1.1rem;
+                transition: fill $transition;
+            }
+
+            &:hover {
+                color: darken($white, 25%);
+
+                svg {
+                    fill: darken($white, 25%);
+                }
+            }
+
+            &:first-of-type {
+                margin-left: unset;
+            }
+        }
+    }
+}
+
+@keyframes brand {
+    0% {
+        fill: $brand;
+    }
+
+    20% {
+        fill: #4099FF;
+    }
+
+    40% {
+        fill: #CC3333;
+    }
+
+    100% {
+        fill: yellow;
+    }
+}
