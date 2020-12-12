@@ -1,7 +1,9 @@
 import React from "react"
-import { Wrap } from "../../wrap"
-import { GitHub, WordLogo } from "../../icon"
 import { Link } from "gatsby"
+
+import { Wrap } from "../../wrap"
+import { GitHub, Discord, WordLogo } from "../../icon"
+
 import "./header.scss"
 
 export const Header = () => (
@@ -12,6 +14,7 @@ export const Header = () => (
 		  </Link>
 		  <div className="menu">
 			  <MenuItem title="Setup" link="/setup"/>
+			  <MenuItemLink icon={<Discord/>} link="#"/>
 			  <MenuItemLink icon={<GitHub/>} link="https://github.com/spotlightify/spotlightify"/>
 		  </div>
 	  </Wrap>

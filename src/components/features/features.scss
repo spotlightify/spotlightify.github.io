@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
 
-    .wrap{
+    .wrap {
 
         .feature {
             display: flex;
@@ -20,12 +20,15 @@
                 flex-direction: row;
 
                 .feature-content {
-                    width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 50%;
                     padding-right: $s-md;
                 }
 
                 .feature-image {
-                    width: 60%!important;
+                    width: 50% !important;
                     max-width: 38rem;
                 }
             }
