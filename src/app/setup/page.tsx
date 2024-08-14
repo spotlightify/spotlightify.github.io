@@ -16,7 +16,7 @@ export default function Page() {
         <div className="flex flex-col ml-6 mr-6 ">
 
             <div className="">
-                <h2 className="text-3xl font-bold">Spotify Authentication Instructions</h2>
+                <h2 className="text-4xl">Spotify Authentication Instructions</h2>
                 <p className="mt-12">
                     To authenticate your Spotify Web API app with Spotlightify, follow these
                     simple steps:
