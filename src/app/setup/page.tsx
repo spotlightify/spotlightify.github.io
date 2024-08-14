@@ -30,7 +30,7 @@ export default function Page() {
                         Log in to your Spotify account. Please note that a Spotify premium account is required for this step.
                     </li>
                     <li className="mt-8">
-                        Create a new app by clicking on the "Create app" button.
+                        Create a new app by clicking on the &quot;Create app&quot; button.
                         <div>
                             <Image className={imageClass} fill={false} src={CreateAppImage} alt="Create app button" />
                         </div>
@@ -43,13 +43,13 @@ export default function Page() {
                             <li>
                                 <strong>Redirect URIs:</strong>&nbsp;
                                 Copy <code className={codeClass}>http://localhost:49264/auth/callback</code>
-                                , paste it in the textbox and click the "Add" button
+                                , paste it in the textbox and click the &quot;Add&quot; button
                             </li>
                             <li>
-                                <strong>Which API/SDKs are you planning yo use?</strong> Tick "Web API"
+                                <strong>Which API/SDKs are you planning yo use?</strong> Tick &quot;Web API&quot;
                             </li>
-                            <li>Tick the "I understand..." checkbox</li>
-                            <li>Click the "Save" button</li>
+                            <li>Tick the &quot;I understand...&quot; checkbox</li>
+                            <li>Click the &quot;Save&quot; button</li>
                         </ol>
                         <div>
                             <Image className={imageClass} fill={false} src={FillFieldsImage} alt="Create app form" />
@@ -60,27 +60,27 @@ export default function Page() {
                         Once your app is created, you will be redirected to the app dashboard.
                     </li>
                     <li className="mt-8">
-                        Click on the "Settings" button.
+                        Click on the &quot;Settings&quot; button.
                         <div>
                             <Image className={imageClass} fill={false} src={ClickOnSettingsImage} alt="Edit settings button" />
                         </div>
                     </li>
                     <li className="mt-8">
-                        Copy the "Client ID" and "Client Secret" values from the app dashboard.
+                        Copy the &quot;Client ID&quot; and &quot;Client Secret&quot; values from the app dashboard.
                         <div>
                             <Image className={imageClass} fill={false} src={IdAndSecretImage} alt="Copy credentials" />
                         </div>
                     </li>
                     <li className="mt-8">
-                        In Spotlightify, click on each of the "Add Spotify Client ID" and "Add Spotify Client
-                        Secret" buttons and paste your Client ID and Client Secret values individually.
+                        In Spotlightify, click on each of the &quot;Add Spotify Client ID&quot; and &quot;Add Spotify Client
+                        Secret&quot; buttons and paste your Client ID and Client Secret values individually.
                         <br />
                         <div>
                             <Image className={imageClass} fill={false} src={AuthSuggestionsImage} alt="Copy credentials" />
                         </div>
                     </li>
                     <li className="mt-8">
-                        Click the "Authenticate with Spotify" button.
+                        Click the &quot;Authenticate with Spotify&quot; button.
                         <br />
                         <div>
                             <Image className={imageClass} fill={false} src={AuthenticateImage} alt="Copy credentials" />
@@ -88,7 +88,7 @@ export default function Page() {
                     </li>
 
                     <li className="mt-8">
-                        You're now ready to authenticate your app with Spotify! Enjoy using Spotlightify!
+                        You&apos;re now ready to authenticate your app with Spotify! Enjoy using Spotlightify!
                     </li>
                 </ol>
             </div>
