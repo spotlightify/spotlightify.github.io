@@ -1,5 +1,5 @@
 import FeatureCard from "@/components/ui/featureCard";
-import features from "./features";
+import features from "../data/features";
 
 export default function Page() {
     return (
