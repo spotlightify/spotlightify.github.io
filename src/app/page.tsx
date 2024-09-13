@@ -1,13 +1,12 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { DownloadIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
 import Branding from "@/components/ui/branding";
 import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const GitHubLink = "https://github.com/spotlightify/spotlightify/";
-const DownloadLink = GitHubLink + "releases";
+const DownloadLink = GitHubLink + "releases/latest";
 
 export default function Home() {
   useEffect(() => {
@@ -19,18 +18,13 @@ export default function Home() {
     <div className='flex gap-10 flex-col mt-14'>
       <Branding className='fade-up-1' />
       <div className='flex gap-5 justify-center fade-up-2'>
-        <TooltipProvider>
-          <Tooltip delayDuration={0}>
-            <TooltipTrigger asChild>
-              <div>
-                <Button disabled className='bg-green-500'><DownloadIcon className="mr-2 h-4 w-4" />Download</Button>
-              </div>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Coming soon</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <div>
+          <Button className='bg-green-500' asChild>
+            <a href={DownloadLink}>
+              <DownloadIcon className="mr-2 h-4 w-4" />Download Beta
+            </a>
+          </Button>
+        </div>
         <Button asChild>
           <a href={GitHubLink}>
             <GitHubLogoIcon className="mr-2 h-4 w-4" />Github
