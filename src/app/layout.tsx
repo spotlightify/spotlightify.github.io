@@ -11,7 +11,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-auto w-full">
+    <html lang="en" className="h-full w-full dark">
       <head>
         <title>Spotlightify</title>
         <meta name="description" content="Spotlightify is a GUI based application designed to allow users to quickly interact with Spotify playback across Windows, Linux, and macOS. Created with simplicity and efficiency in mind, Spotlightify allows users to seamlessly control their music experience without having to navigate through Spotify's native interface." />
@@ -30,9 +30,19 @@ export default function RootLayout({
         <meta property="og:locale" content="en_US" />
       </head>
 
-      <body className={`${GeistSans.className} h-auto w-full overflow-auto flex flex-col items-center`}>
+      <body className={`${GeistSans.className} h-full w-full overflow-auto flex flex-col items-center bg-[#f8fafc] dark:bg-[#0A0A0A] relative`}>
+        {/* Top Gradient */}
+        <div className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
+          <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#1DB954] to-[#191414] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
+        </div>
+
+        {/* Bottom Gradient */}
+        <div className="absolute inset-x-0 bottom-0 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
+          <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#1DB954] to-[#191414] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" />
+        </div>
+
         <NavBar />
-        <main style={{ backgroundColor: "#fefefe" }} className="max-w-4xl ml-4 mr-4 w-full mt-28 sm:mt-24 sm:mb-10 pb-10">
+        <main className="w-full h-full mt-16">
           {children}
         </main>
       </body>
