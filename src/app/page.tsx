@@ -43,7 +43,7 @@ export default function Home() {
             Everything you need in one shortcut
           </p>
           <p className='mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400'>
-            Access Spotify's full functionality through intuitive keyboard commands. No more context switching.
+            Access Spotify&apos;s full functionality through intuitive keyboard commands. No more context switching.
           </p>
         </div>
 
