@@ -43,7 +43,7 @@ export default function ActionButtons({
             <div className="relative">
                 <Button
                     size={size}
-                    variant={isRecommended ? 'spotify' : 'spotifyAlt'}
+                    variant={'spotify'}
                     scale={isRecommended ? 'recommended' : 'default'}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
