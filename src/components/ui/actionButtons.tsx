@@ -12,6 +12,7 @@ interface ActionButtonsProps {
     showGithub?: boolean;
     downloadText?: string;
     platform?: OS;
+    githubStars?: string;
 }
 
 export default function ActionButtons({
@@ -19,7 +20,8 @@ export default function ActionButtons({
     size = 'default',
     showGithub = true,
     downloadText = 'Download Beta',
-    platform = "Unknown"
+    platform = "Unknown",
+    githubStars = "200+"
 }: ActionButtonsProps) {
     const [os, setOs] = useState<OS | undefined>(platform);
 
@@ -72,7 +74,7 @@ export default function ActionButtons({
                         <span className="mr-2">Github</span>
                         <div className="flex items-center text-xs bg-gray-100 dark:bg-gray-800 rounded-full px-2 py-0.5">
                             <StarIcon className="mr-1 h-3.5 w-3.5" />
-                            200+
+                            {githubStars}
                         </div>
                     </a>
                 </Button>

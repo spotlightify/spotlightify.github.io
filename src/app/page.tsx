@@ -8,11 +8,13 @@ import features from './data/features';
 import VideoWindow from "@/components/ui/videoWindow";
 import { headers } from 'next/headers'
 import { getOSFromUserAgent } from "@/lib/utils";
+import { getGithubStars } from "./actions/github";
 
-export default function Home() {
+export default async function Home() {
   const headersList = headers();
   const userAgent = headersList.get('user-agent');
   const os = getOSFromUserAgent(userAgent || "");
+  const githubStars = await getGithubStars();
 
   return (
     <main className="min-h-screen">
@@ -27,7 +29,7 @@ export default function Home() {
               Press <kbd className="px-2 py-1 text-sm font-semibold bg-gray-100 dark:bg-gray-800 rounded border border-gray-300 dark:border-gray-700 shadow-sm">⌃ Ctrl + {os === "macOS" ? "⌥ Option" : "Alt"} + Space</kbd> to search, play, and manage your music without leaving your workflow.
             </p>
 
-            <ActionButtons className="mt-10 justify-center fade-up-2" size="lg" platform={os} />
+            <ActionButtons className="mt-10 justify-center fade-up-2" size="lg" platform={os} githubStars={githubStars} />
           </div>
 
           {/* Demo Video */}
