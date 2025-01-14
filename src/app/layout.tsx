@@ -1,9 +1,55 @@
-'use client'
-
 import type { Metadata } from "next";
 import "./globals.css";
 import { GeistSans } from 'geist/font/sans';
 import NavBar from "@/components/ui/navbar";
+
+export const metadata: Metadata = {
+  title: "Spotlightify - Seamless Spotify Control",
+  description: "Spotlightify is a GUI based application designed to allow users to quickly interact with Spotify playback across Windows, Linux, and macOS. Created with simplicity and efficiency in mind.",
+  keywords: ["Spotlightify", "Spotify", "Spotlight", "Next.js", "TypeScript", "React", "Wails", "Golang"],
+  authors: [{ name: "Peter Murphy" }],
+  creator: "Peter Murphy",
+  publisher: "Peter Murphy",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  themeColor: "#1DB954",
+  openGraph: {
+    type: "website",
+    title: "Spotlightify - Seamless Spotify Control",
+    description: "Spotlightify is a GUI application that simplifies Spotify playback control across multiple platforms.",
+    images: [{
+      url: "https://raw.githubusercontent.com/spotlightify/spotlightify/main/media/logo.svg",
+      width: 800,
+      height: 800,
+      alt: "Spotlightify Logo"
+    }],
+    url: "https://spotlightify.github.io/",
+    siteName: "Spotlightify",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spotlightify - Seamless Spotify Control",
+    description: "Control Spotify with lightning speed using Spotlightify's intuitive interface.",
+    images: ["https://raw.githubusercontent.com/spotlightify/spotlightify/main/media/logo.svg"],
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  verification: {
+    google: "your-google-site-verification", // You'll need to add this
+  },
+  alternates: {
+    canonical: "https://spotlightify.github.io",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -12,24 +58,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full w-full dark">
-      <head>
-        <title>Spotlightify</title>
-        <meta name="description" content="Spotlightify is a GUI based application designed to allow users to quickly interact with Spotify playback across Windows, Linux, and macOS. Created with simplicity and efficiency in mind, Spotlightify allows users to seamlessly control their music experience without having to navigate through Spotify's native interface." />
-        <meta name="keywords" content="Spotlightify, Spotify, Spotlight, Next.js, TypeScript, React, Wails, Golang" />
-        <meta name="author" content="Peter Murphy" />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#1DB954" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Spotlightify - Seamless Spotify Control" />
-        <meta property="og:description" content="Spotlightify is a GUI application that simplifies Spotify playback control across multiple platforms." />
-        <meta property="og:image" content="https://github.com/spotlightify/spotlightify/blob/main/media/logo.svg" />
-        <meta property="og:url" content="https://spotlightify.github.io/" />
-        <meta property="og:site_name" content="Spotlightify" />
-        <meta property="og:locale" content="en_US" />
-      </head>
-
       <body className={`${GeistSans.className} h-full w-full overflow-auto flex flex-col items-center bg-[#f8fafc] dark:bg-[#0A0A0A] relative`}>
         {/* Top Gradient */}
         <div className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
