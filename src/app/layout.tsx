@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       height: 800,
       alt: "Spotlightify Logo"
     }],
-    url: "https://spotlightify.github.io/",
+    url: "https://spotlightify.petermurph.ie/",
     siteName: "Spotlightify",
     locale: "en_US",
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     google: "your-google-site-verification", // You'll need to add this
   },
   alternates: {
-    canonical: "https://spotlightify.github.io",
+    canonical: "https://spotlightify.petermurph.ie",
   },
 };
 

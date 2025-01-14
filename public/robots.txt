@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://spotlightify.github.io/sitemap.xml 
+Sitemap: https://spotlightify.petermurph.ie/sitemap.xml 
