@@ -6,7 +6,7 @@ export async function getLatestRelease() {
       "https://api.github.com/repos/spotlightify/spotlightify/releases/latest",
       {
         // Ensure fresh data
-        next: { revalidate: 3600 }, // Cache for 1 hour
+        next: { revalidate: 600 }, // Cache for 10 minutes
       }
     );
 
@@ -28,7 +28,7 @@ export async function getGithubStars(): Promise<string> {
     const response = await fetch(
       "https://api.github.com/repos/spotlightify/spotlightify",
       {
-        next: { revalidate: 3600 }, // Cache for 1 hour
+        next: { revalidate: 600 }, // Cache for 10 minutes
       }
     );
     const data = await response.json();
