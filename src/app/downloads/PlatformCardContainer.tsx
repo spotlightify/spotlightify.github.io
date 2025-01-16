@@ -120,7 +120,9 @@ const platforms: PlatformCardProps[] = [
         platform: "Linux",
         icon: "🐧",
         instructions: [
-            "Visit README for installation instructions: https://github.com/spotlightify/spotlightify"
+            "Ensure you have the necessary dependencies installed",
+            "Clone the repository",
+            "Follow the 'Building from source' instructions in the README to build the application"
         ],
         requirements: [
             "Modern Linux distribution",
@@ -130,6 +132,8 @@ const platforms: PlatformCardProps[] = [
             "Go 1.22 or later",
             "Wails 2.92 or later",
             "Node.js 20 or later",
+            "CGO enabled",
+            "GCC compiler installed"
         ],
         features: [
             "System tray integration",
@@ -137,7 +141,11 @@ const platforms: PlatformCardProps[] = [
             "Automatic startup option",
             "AppImage format available",
             "Native desktop environment integration"
-        ]
+        ],
+        altDownloadButton: {
+            text: "Build from source",
+            href: "https://github.com/spotlightify/spotlightify#building"
+        }
     }
 ];
 
@@ -149,9 +157,13 @@ export interface PlatformCardProps {
     features?: string[];
     downloadFile?: string;
     version?: string;
+    altDownloadButton?: {
+        text: string;
+        href: string;
+    };
 }
 
-function PlatformCard({ platform, icon, instructions, requirements = [], features = [], downloadFile, version }: PlatformCardProps) {
+function PlatformCard({ platform, icon, instructions, requirements = [], features = [], downloadFile, version, altDownloadButton }: PlatformCardProps) {
     const [os, setOS] = useState<string>('Unknown');
     const downloadUrl = version && downloadFile ? getSecureDownloadUrl(version, downloadFile) : null;
 
@@ -208,13 +220,13 @@ function PlatformCard({ platform, icon, instructions, requirements = [], feature
                                         Download for {platform}
                                     </a>
                                 </Button>
-                            ) : (
+                            ) : altDownloadButton ? (
                                 <Button variant="spotify" scale="default" asChild>
-                                    <a href="https://github.com/spotlightify/spotlightify/releases/latest">
-                                        Download from GitHub
+                                    <a href={altDownloadButton?.href}>
+                                        {altDownloadButton?.text}
                                     </a>
                                 </Button>
-                            )}
+                            ) : null}
                         </div>
                     </div>
 
