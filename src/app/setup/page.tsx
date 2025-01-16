@@ -47,7 +47,7 @@ const steps: SetupStep[] = [
         substeps: [
             "App Name: Spotlightify",
             "App Description: Spotlightify App",
-            "Redirect URI: http://localhost:49264/auth/callback",
+            "Redirect URI: http://localhost:9123/auth/callback",
             "Select 'Web API' under API/SDKs",
             "Accept the terms and conditions",
             "Click 'Save' to create your app"
