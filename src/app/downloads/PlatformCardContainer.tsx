@@ -163,6 +163,27 @@ export interface PlatformCardProps {
     };
 }
 
+async function trackDownload(platform: string, version: string) {
+    try {
+        const response = await fetch('/api/track-download', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ platform, version }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to track download');
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error tracking download:', error);
+    }
+}
+
 function PlatformCard({ platform, icon, instructions, requirements = [], features = [], downloadFile, version, altDownloadButton }: PlatformCardProps) {
     const [os, setOS] = useState<string>('Unknown');
     const downloadUrl = version && downloadFile ? getSecureDownloadUrl(version, downloadFile) : null;
@@ -170,6 +191,12 @@ function PlatformCard({ platform, icon, instructions, requirements = [], feature
     useEffect(() => {
         setOS(getOS());
     }, []);
+
+    const handleDownload = async () => {
+        if (version) {
+            await trackDownload(platform, version);
+        }
+    };
 
     const isUserPlatform = platform === os;
 
@@ -209,7 +236,7 @@ function PlatformCard({ platform, icon, instructions, requirements = [], feature
 
                         <div className="mt-6 flex gap-4 justify-start">
                             {downloadUrl ? (
-                                <Button variant="spotify" scale="default" asChild>
+                                <Button variant="spotify" scale="default" asChild onClick={handleDownload}>
                                     <a
                                         href={downloadUrl}
                                         target="_blank"
