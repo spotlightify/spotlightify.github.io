@@ -8,7 +8,6 @@ import FillFieldsImage from "/public/images/fill_fields.jpeg";
 import ClickOnSettingsImage from "/public/images/click_on_settings.jpeg";
 import IdAndSecretImage from "/public/images/id_and_secret.jpeg";
 import AuthSuggestionsImage from "/public/images/auth_suggestions.png";
-import AddClientIdImage from "/public/images/add_client_id.png";
 import AuthenticateImage from "/public/images/authenticate.png";
 
 interface SetupStep {
@@ -45,9 +44,9 @@ const steps: SetupStep[] = [
         image: FillFieldsImage,
         imageAlt: "Create app form",
         substeps: [
-            "App Name: Spotlightify",
+            "App Name: My Spotlightify",
             "App Description: Spotlightify App",
-            "Redirect URI: http://localhost:9123/auth/callback",
+            "Redirect URI: http://127.0.0.1:9123/auth/callback",
             "Select 'Web API' under API/SDKs",
             "Accept the terms and conditions",
             "Click 'Save' to create your app"
